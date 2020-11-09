@@ -7,33 +7,34 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous">
         </script>
-        <script src="https://cdn.cloudmersive.com/jsclient/cloudmersive-validate-client.js"></script>
+        <script src="https://cdn.cloudmersive.com/jsclient/cloudmersive-virus-api-client.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     
     <body>
         <script >
-            var defaultClient = cloudmersiveValidateApiClient.ApiClient.instance;
+            var CloudmersiveVirusApiClient = require('cloudmersive-virus-api-client');
+            var defaultClient = CloudmersiveVirusApiClient.ApiClient.instance;
 
             // Configure API key authorization: Apikey
             var Apikey = defaultClient.authentications['Apikey'];
-            Apikey.apiKey = "e304df53-9e91-4baa-88de-a785347682af"
+            Apikey.apiKey = "e304df53-9e91-4baa-88de-a785347682af";
+            // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+            //Apikey.apiKeyPrefix = 'Token';
 
-            var api = new cloudmersiveValidateApiClient.DomainApi()
+            var apiInstance = new CloudmersiveVirusApiClient.ScanApi();
 
-            var domain = "cloudmersive.com"; // {String} Domain name to check, for example \"cloudmersive.com\".  The input is a string so be sure to enclose it in double-quotes.
+            var input = new CloudmersiveVirusApiClient.WebsiteScanRequest(); // WebsiteScanRequest | 
 
 
-            var callback = function (error, data, response) {
-                if (error) {
-                    console.error(error);
-                } else {
-                    console.log('API called successfully. Returned data: ' + data);
-                }
+            var callback = function(error, data, response) {
+            if (error) {
+                console.error(error);
+            } else {
+                console.log('API called successfully. Returned data: ' + data);
+            }
             };
-
-            api.domainCheck(domain, callback);
-            
+            apiInstance.scanWebsite(input, callback);
     </script>
     </body>
 </html>
