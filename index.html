@@ -7,27 +7,32 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous">
         </script>
+        <script src="https://cdn.cloudmersive.com/jsclient/cloudmersive-validate-client.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     
     <body>
         <script >
-            $(document).ready(function(){
-                const settings = {
-                    "async": true,
-                    "crossDomain": true,
-                    "url": "https://ronreiter-meme-generator.p.rapidapi.com/meme?meme=Condescending-Wonka&top=Top%20text&bottom=Bottom%20text&font=Impact&font_size=50",
-                    "method": "GET",
-                    "headers": {
-                        "x-rapidapi-key": "ee6b29a79fmsh5e3f36e3218cfefp16244fjsn2bd0774ca8ed",
-                        "x-rapidapi-host": "ronreiter-meme-generator.p.rapidapi.com"
-                    }
-                };
+            var defaultClient = cloudmersiveValidateApiClient.ApiClient.instance;
 
-                $.ajax(settings).done(function (response) {
-                    console.log(response);
-                });
-            });
+            // Configure API key authorization: Apikey
+            var Apikey = defaultClient.authentications['Apikey'];
+            Apikey.apiKey = "YOUR_API_KEY_HERE"
+
+            var api = new cloudmersiveValidateApiClient.DomainApi()
+
+            var domain = "cloudmersive.com"; // {String} Domain name to check, for example \"cloudmersive.com\".  The input is a string so be sure to enclose it in double-quotes.
+
+
+            var callback = function (error, data, response) {
+                if (error) {
+                    console.error(error);
+                } else {
+                    console.log('API called successfully. Returned data: ' + data);
+                }
+            };
+
+            api.domainCheck(domain, callback);
             
     </script>
     </body>
