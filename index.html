@@ -15,7 +15,8 @@
             var req = new Request("https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=6486affa944d423a93e661902f0261d7");
             fetch(req)
                 .then(function(response) {
-                    document.writeln(response.json())
+                    var data = JSON.stringify(response.json())
+                    document.writeln(data)
                     // console.log(response.json());
                 })
     </script>
