@@ -12,10 +12,7 @@
     
     <body>
         <script >
-            var url = 'http://newsapi.org/v2/top-headlines?' +
-          'country=us&' +
-          'apiKey=6486affa944d423a93e661902f0261d7';
-            var req = new Request(url);
+            var req = new Request("https://api.nytimes.com/svc/mostpopular/v2/viewed/{period}.json");
             fetch(req)
                 .then(function(response) {
                     console.log(response.json());
