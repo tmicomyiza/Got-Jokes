@@ -12,20 +12,23 @@
     
     <body>
         <script >
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://ronreiter-meme-generator.p.rapidapi.com/meme?meme=Condescending-Wonka&top=Top%20text&bottom=Bottom%20text&font=Impact&font_size=50",
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-key": "ee6b29a79fmsh5e3f36e3218cfefp16244fjsn2bd0774ca8ed",
-                    "x-rapidapi-host": "ronreiter-meme-generator.p.rapidapi.com"
-                }
-            };
+            $(document).ready(function(){
+                const settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://ronreiter-meme-generator.p.rapidapi.com/meme?meme=Condescending-Wonka&top=Top%20text&bottom=Bottom%20text&font=Impact&font_size=50",
+                    "method": "GET",
+                    "headers": {
+                        "x-rapidapi-key": "ee6b29a79fmsh5e3f36e3218cfefp16244fjsn2bd0774ca8ed",
+                        "x-rapidapi-host": "ronreiter-meme-generator.p.rapidapi.com"
+                    }
+                };
 
-            $.ajax(settings).done(function (response) {
-                console.log(response);
+                $.ajax(settings).done(function (response) {
+                    console.log(response);
+                });
             });
+            
     </script>
     </body>
 </html>
