@@ -12,10 +12,11 @@
     
     <body>
         <script >
-            var req = new Request("https://api.nytimes.com/svc/mostpopular/v2/viewed/{period}.json");
+            var req = new Request("https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=6486affa944d423a93e661902f0261d7");
             fetch(req)
                 .then(function(response) {
-                    console.log(response.json());
+                    document.writeln(response.json())
+                    // console.log(response.json());
                 })
     </script>
     </body>
