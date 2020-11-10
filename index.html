@@ -32,12 +32,16 @@
                 padding-top: 2rem;
                 padding-left: 2rem;
                 padding-bottom: 2rem;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                box-shadow: 8px 12px rgba(0, 0, 0, 0.2);
                 font-size: x-large;
             }
             
             #data {
+               padding-top: 2rem;
                 padding-left: 2rem;
+                box-shadow: 8px 12px rgba(0, 0, 0, 0.2);
+                color: #27772a;
+                padding-bottom: 2rem;
             }
         </style>
     </head>
@@ -122,17 +126,17 @@
                             var str = "<dl><dt>Setup: " + joke.setup + "</dt>";
                             str += "<dt>delivery: " + joke.delivery + "</dt></dl>";
                         } 
+
                         else {
                             var str = "<dl><dt>Joke: " + joke.joke + "</dt></dl>";
                         }
-
                         
                         
                         document.getElementById("data").innerHTML = str;
                     }
                     else if (request.readyState == 4 && request.status != 200) {
 
-                        document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+                        document.getElementById("data").innerHTML = "Something is wrong!  Try again";
 
                     }
 
@@ -146,7 +150,7 @@
                 // Step 4: fire off the HTTP request
                 request.send();
 
-            })
+            });
     </script>
     </body>
 </html>
